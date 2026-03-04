@@ -6,6 +6,7 @@ clear_screen()
 # ============================
 
 import pandas as pd
+import openpyxl
 
 '''
 FIRST:
@@ -18,11 +19,13 @@ HOW TO DOWNLOAD LIBRARIES:
 
     1. In VS Code, go to Terminal > New Terminal (at the top of the screen)
 
-    2. Then in the bottom Terminal window, type:
-                pip install pandas
-        and then hit the enter/return key. If that doesen't work, try:
-                pip3 install pandas
-        then hit the enter/return key
+    2. Then in the bottom Terminal window type this and press enter:
+                pip install pandas openpyxl
+       If that doesn't work, try one of these commands:
+                pip3 install pandas openpyxl
+                python -m pip install pandas openpyxl
+                python3 -m pip install pandas openpyxl
+                py -3 -m pip install pandas openpyxl
     
     3. Then, try and run this python file again, if it prints out the message
        below, you are good.
@@ -53,4 +56,4 @@ IT STILL ISN'T WORKING FOR ME:
        and then select the version of python that says "Recommended" 
 '''
 
-print("If this prints, that means you installed pandas correctly")
+print("If this prints, that means you installed pandas and openpyxl correctly")
