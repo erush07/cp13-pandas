@@ -36,39 +36,30 @@ Instructions:
 5. Test your program by running it and entering several students.
    Then open the Excel file to confirm that the data was saved.
 '''
-# Put code here
 
 import pandas as pd
 
-# list to hold each student's data
-students = []
+# eventually, stick a bunch of dictionaries in this list
+students_list = []
 
 while True:
-    name = input("Enter student's name: ").strip()
-    gpa = input(f"Enter {name}'s GPA: ").strip()
+    name = input("Enter a student name: ")
+    gpa = float(input("Enter a GPA: "))
 
-    # store the data as a dictionary
-    students.append({
-        "name": name,
-        "gpa": float(gpa)  # convert to number
-    })
-
-    # ask if user wants to continue
-    another = input("Add another student? (y/n): ").strip().lower()             
-    if another != "y":
+    # YOU ADD CODE HERE:
+    # 1. Create a dictionary to store the name and gpa
+    student_dict = {'name': name, 'gpa': gpa}
+    # 2. Append the dictionary to the students_list
+    students_list.append(student_dict) # store the dictionary in the list
+    keep_asking = input("Add another student? (y/n): ").strip().lower()
+    if keep_asking == 'n':
         break
 
-# create DataFrame from list of dictionaries
-df = pd.DataFrame(students)
+# create a dataframe from the list of dictionaries
+df_students = pd.DataFrame(students_list)
+print(df_students)
+df_students.to_excel("student_grades.xlsx", index=False)
 
-# show the data
-print("\nCollected data:")
-print(df)
-
-# export to Excel
-df.to_excel("student_grades.xlsx", index=False)
-
-print("\nData saved to 'student_grades.xlsx'")
 
 '''
 EXTRA THOUGHT:

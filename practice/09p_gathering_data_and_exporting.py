@@ -36,13 +36,28 @@ Instructions:
 5. Test your program by running it and entering several students.
    Then open the Excel file to confirm that the data was saved.
 '''
-# Put code here
+import pandas as pd
 
+# eventually, stick a bunch of dictionaries in this list
+students_list = []
 
+while True:
+    name = input("Enter a student name: ")
+    gpa = float(input("Enter a GPA: "))
 
+    # YOU ADD CODE HERE:
+    # 1: Create a dictionary to store the name and gpa
 
+    # 2: Append the dictionary to the students_list
 
+    keep_asking = input("Add another student? (y/n): ").strip().lower()
+    if keep_asking == 'n':
+        break
 
+# create a dataframe from the list of dictionaries
+df_students = pd.DataFrame(students_list)
+print(df_students)
+df_students.to_excel("student_grades.xlsx", index=False)
 
 
 '''
