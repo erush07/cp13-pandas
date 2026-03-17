@@ -24,17 +24,31 @@ students_dict = {
 # PART 1:
 # Convert the dictionary to a Pandas DataFrame and print it out.
 
+import pandas as pd
+
+df_students = pd.DataFrame(students_dict)
+print(df_students)
+
 
 # PART 2:
 # - Print the Math scores of all students.
 # - Print the name and scores of all subjects of the third student.
+
+print(df_students["Math"])
+print(df_students.iloc[2])
 
 
 # PART 3:
 # - Update the English score of the first student to 75.
 # - Update the Science score of the last student to 85.
 
+df_students.loc[0, "English"] = 75
+df_students.loc[4, "Science"] = 85
+
 
 # PART 4:
 # Add 10 to the Math scores of all students
 
+df_students["Math"] += 10
+
+print(df_students)

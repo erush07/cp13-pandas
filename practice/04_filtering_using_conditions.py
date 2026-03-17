@@ -64,21 +64,28 @@ print(df_dancers, "\n")
 
 # 1. FILTER USING .query()
 # Show all columns, but only for those age 21 and older. Use .query
-
+print()
+print(df_dancers.query("Age >= 21"))
 
 # 2. FILTER USING .query(), SHOW A SINGLE COLUMN
 # Show only 21 or older, but just show the Dancer column. Use .query.
 # Just use brackets after the query method to get the "Dancer" column.
 
+print()
+print(df_dancers.query("Age >= 21")["Dancer"])
 
 # 3. FILTER USING .query() WITH MULTIPLE CONDITIONS
 # Show only 21 or older that have a dance Type of Jazz
-
+print()
+print(df_dancers.query("Age >= 21 and Type == 'Jazz'"))
 
 # 4. CHANGE YOUR DATAFRAME WITH .query() BY USING inplace=True
 # Print out your DataFrame. Then run a query to only retain those with an age
 # over 21, but add the parameter inplace with True as the argument. Print out
 # your DataFrame again. What happened?
+clear_screen()
+print(df_dancers.query("Age >= 21 and Type == 'Jazz'", inplace = True))
+print(df_dancers)
 
 
 '''

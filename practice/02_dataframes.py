@@ -30,7 +30,7 @@ WHY USE DATAFRAMES/PANDAS?
     - A very computationally efficient way to filter and sort data.
 '''
 
-
+import pandas as pd
     
 dancer_dict = {
     "Type" : ["Ballet", "Jazz", "Modern", "Tap", "Tango", "Square", "Hip-Hop"],
@@ -42,11 +42,14 @@ dancer_dict = {
 # Make sure to import pandas. Convention is to give pandas the alias "pd" but
 # you can do whatever you want.
 
+#see above
 
 # 2. CREATE A DATAFRAME
 # Using the provided dancer_dict, create a DataFrame object using
 # pd.DataFrame(). Store the DataFrame in a new variable, and then print it out
 
+df = pd.DataFrame(dancer_dict)
+print(df)
 
 '''
 RULES FOR MAKING A DATAFRAME FROM A DICTIONARY:
@@ -62,7 +65,8 @@ RULES FOR MAKING A DATAFRAME FROM A DICTIONARY:
 # Use .index and .columns to access row indexes and column labels
 # To print them out nice, you can convert them to a list() first.
 
-
+print(df.index)
+print(df.columns)
 
 '''
 CHANGING INDICES OR LABELS

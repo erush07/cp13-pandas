@@ -23,13 +23,16 @@ import pandas as pd
 # Import the included dancers.csv file. using pd.read_csv() .csv stands for
 # "comma separated values" and is a common way of storing data.
 # Print out the DataFrame after you import the .csv file.
-
+df = pd.read_csv("dancers.csv")
+print(df)
 
 # 2. ALTER THE DATAFRAME THEN EXPORT IT
 # Add an asterisk to everyone's name, then save it as altered_dancers.csv
 # Using the .to_csv() method. If you don't want the indices to be included
 # add the parameter "index" with False as the argument
+df["Name"] = "*"
 
+df.to_excel("output.xlsx")
 
 # 3. EXPORT TO AN EXCEL FILE
 # Export your DataFrame to an Excel file called altered_dancers.xlsx using

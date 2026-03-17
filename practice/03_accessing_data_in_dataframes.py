@@ -51,7 +51,9 @@ print(df_dancers, "\n")
 # You can access a specific column by giving its name in square brackets.
 # Try printing out just the "Dancer" column
 
-
+print()
+print(df_dancers["Dancer"])
+print(df_dancers[["Dancer", "Age"]])
 '''
 WHY DID IT PRINT WEIRD WHEN THERE WAS ONLY ONE COLUMN?
 ------------------------------------------------------
@@ -68,7 +70,9 @@ are stored as "object" datatypes.
 # without looping. It is faster to write and faster for your computer to run.
 # Add 1 to the age of everyone in the DataFrame. Print out the DataFrame to
 # see if you did it correctly.
-
+clear_screen()
+df_dancers["Age"] += 1
+print(df_dancers)
 
 # 3. ACCESS MULTIPLE COLUMNS
 # You can access multiple columns by giving a list inside the square brackets
@@ -84,7 +88,8 @@ are stored as "object" datatypes.
 # .iloc gets rows based on their integer index location. Note that you use
 # square brackets with .iloc instead of parentheses, like .iloc[0]. Get the 3rd
 # row and print it out.
-
+clear_screen()
+print(df_dancers.iloc[2,2])
 
 # 5. ACCESS A SPECIFIC ROW AND COLUMN WITH .iloc
 # After you specify a row location, you can specify a column location
@@ -93,13 +98,15 @@ are stored as "object" datatypes.
 # 6. ACCESS THE LAST ROW WITH .iloc
 # You can access the last element by using -1, second to last using -2, etc.
 # Try printing everything from the last row of the dataframe:
-
+print(df_dancers.iloc[-2])
 
 # 7. CHANGE DATA USING .iloc
 # Try to change the age of the 3rd row, 3rd column to 30 using .iloc. Print out
 # the dataframe again to see if your change occured.
 
-
+clear_screen()
+df_dancers.iloc[2,2] = 30
+print(df_dancers)
 
 '''
 GETTING MULTIPLE ROWS/COLUMNS
@@ -137,7 +144,8 @@ There are other advantages to using .loc
 
 # 10. ACCESS A SPECIFIC ROW AND COLUMN WITH .loc
 # Get the age of the person in the 3rd row with .loc
-
+clear_screen()
+print(df_dancers)
 
 # 11. ACCESS MULTPLE ROWS AND COLUMNS WITH .loc
 # You can access multiple rows or columns using a colon : to specify a starting
@@ -145,7 +153,7 @@ There are other advantages to using .loc
 # and grabs the start and stopping element. Print out the 3rd to the 5th row
 # with just the Dancer and Age columns
 
-
+print(df_dancers.loc[2,"Age"])
 # 12. CHANGE DATA USING .loc
 # Add " Smith" to the existing data in the "Dancer" column for the 3rd and 
 # 6th rows. Using += will be useful here. Print out the DataFrame again to 
