@@ -43,10 +43,12 @@ There are more than these, but some standard ones are:
 # Access the "hours_slept" column in the DataFrame and try adding one of the
 # above listed functions to the end of it. Print out the result
 
+print(df_mock_data["hours_slept"].mean())
 
 # 2. USE MATH FUNCTIONS ON A WHOLE DATAFRAME
 # Use one of the above listed functions on the whole DataFrame. Notice how it
 # automatically only applies it to columns that it can run on.
+print(df_mock_data.max())
 
 
 '''
@@ -71,3 +73,5 @@ df.groupby("column_name_to_group_on")["column_to_do_calculation_on"].math_functi
 # Using the provided DataFrame, group by the "gender" column and calculate the
 # mean hours_slept for Males and Females.
 
+print()
+print(df_mock_data.groupby("gender")["hours_slept"].mean())

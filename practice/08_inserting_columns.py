@@ -43,11 +43,15 @@ as the DataFrame.
 # Insert a new column in the first position called "test_column" with an empty
 # string as the data
 
+print(df_mock_data)
+df_mock_data.insert(0, "test_column", "")
+print(df_mock_data)
 
 # 2. INSERTING A NEW COLUMN BASED ON EXISTING COLUMN
 # Now make a column called "half_age" that is the
 # original age column divided by 2 put it right after the original age column.
-
+df_mock_data.insert(4, "half_age", df_mock_data["age"]/2)
+print(df_mock_data)
 
 '''
 If you want more info on inserting/deleting stuff in a dataframe, see the extra

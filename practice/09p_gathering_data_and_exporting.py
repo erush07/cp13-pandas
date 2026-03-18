@@ -47,9 +47,9 @@ while True:
 
     # YOU ADD CODE HERE:
     # 1: Create a dictionary to store the name and gpa
-
+    students_dict = {"name": name, "gpa": gpa}
     # 2: Append the dictionary to the students_list
-
+    students_list.append(students_dict)
     keep_asking = input("Add another student? (y/n): ").strip().lower()
     if keep_asking == 'n':
         break

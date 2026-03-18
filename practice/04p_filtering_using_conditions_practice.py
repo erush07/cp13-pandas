@@ -4,6 +4,7 @@ clear_screen()
 # =======================================
 # PRACTICE - ACCESSING DATA IN DATAFRAMES
 # =======================================
+import pandas as pd
 
 students_dict = {
     "Name" : ["Frank", "Jacob", "James", "Alice", "Emily"],
@@ -26,3 +27,9 @@ students_dict = {
 # - Show all columns for all students that got an 85 or above in 
 #   English, but also got a 50 or below in Science
 
+df = pd.DataFrame(students_dict)
+print(df)
+
+print(df.query("Math > 85"))
+print(df.query("Math > 85")["Name"])
+print(df.query("English > 85 and Science <= 50"))
